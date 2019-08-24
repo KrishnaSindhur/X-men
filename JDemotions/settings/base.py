@@ -131,7 +131,6 @@ class Base(LoggerSettingsMixin, Configuration):
     STATICFILES_DIRS = (
         STATIC_PATH,
     )
-    # STATIC_URL = '/static/'
     STATIC_ROOT = os.path.join(PROJECT_PATH, "../static/")
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

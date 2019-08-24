@@ -1,80 +1,100 @@
 <!-- templates/index.html -->
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}BIAS{% endblock %}
 
 {% block content %}
 
 <div class="main_container">
     <form action='' method="POST">
-        <div class="cover_image">
-            <img src="https://s3-ap-southeast-1.amazonaws.com/images.humanresourcesonline.net/wp-content/uploads/2018/04/Jerene-April-2018-gender-equality-123RF.jpg"
-                 width="100%">
-        </div>
         <div class="title_text">
-            <h2>You deserve a job where you truly belong </h2>
+            <p>"Our words reveal us"</p>
+            <h5><span>The way we write changes how people read us, and how they react.</span></h5>
+            <br><a class='get_started' href="#blank_space">Get Started</a>
         </div>
-        <br>
+        <div class="_image">
+            <img src="https://miro.medium.com/max/1024/1*JdCP-BisG_cyLObnKR3jwg.jpeg" width="55%">
+        </div>
+        <div id="blank_space">&nbsp</div>
         {% csrf_token %}
-        <div>
+        <div id="get_started">
             <table>
                 {{ form.text_input }}
             </table>
         </div>
-        <div>
-            <input type="submit" class="btn btn-success" value="Click to check"/>
+        <div class="submit_button">
+            <input type="submit" class="btn btn-success" value="Check Biasness" />
+        </div>
+        <div class="content_text">
+            <h3><img src="https://textio.com/_/cache/images/augmented-writing/Culture.svg"> Language is culture</h3>
+            <p>You use words constantly: emailing, writing, texting. Every word you choose reveals who you are.
+                The way you ask a question determines who will answer you. The way you present a job changes
+                who can see themselves in it. Everything about your company culture is built on language.
+                How do you know how you sound?</p>
         </div>
         <br>
     </form>
 </div>
 
-<script>
-    // function get_bias() {
-    //     var text = document.querySelector('#text_input').value;
-    //     if (text != null && text.trim() !== '') {
-    //         // $.ajax({
-    //         //     url: '',
-    //         //     method: 'GET',
-    //         //     data: {
-    //         //         'bias_text': text
-    //         //     },
-    //         //     dataType: 'json',
-    //         //     success: function (data) {
-    //         //         if(data.status_code == 500) {
-    //         //             alert("Server Error");
-    //         //         }
-    //         //     }
-    //         // });
-    //         var url = "?bias_text=" + text;
-    //         window.location.href = url;
-    //     }
-    // }
-
-    // function get_bias() {
-    //     var text = document.querySelector('#text_input').value;
-    //     var form = $('<form action=' + 'method="post">' +
-    //         'name="get_bias" value="' + text'" + '</form>');
-    //     $('body').append(form);
-    //     form.submit();
-    // }
-</script>
 <style>
-    textarea {
-        width: 800px;
-        height: 200px;
-        resize: horizontal;
+    .main_container {
+        display: grid;
+        /*flex-flow: column nowrap;*/
+        grid-template-columns: auto;
+        text-align: center;
+        background-color: transparent;
     }
 
-    .main_container {
-        display: flex;
-        flex-flow: column nowrap;
+    .get_started {
+        background-color: #80C9D7;
+        padding: 10px 20px;
+        margin: 5px 10px;
+        font-size: 20px;
+        color: white;
+    }
+
+    a:hover{
+        color: white;
+        text-decoration:none;
+        cursor:pointer;
+    }
+
+    #blank_space{
+        margin: 80px 0;
+    }
+
+    .title_text > p {
+        font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+        top: 80px;
+        font-size: 40px;
         text-align: center;
+        font-weight: 900;
+        color: #FD926D;
     }
 
     .title_text {
-        font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
-        position: absolute;
-        top: 80px;
-        left: 50px;
+        font-family: Consolas, Monaco, Lucida Console, Liberation Mono,
+        DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+        margin: 60px 20px;
+    }
+
+    textarea {
+        width: 60%;
+        height: 400px;
+    }
+
+    .content_text{
+        width: 55%;
+        font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+        margin: 30px 20%;
+    }
+
+    .content_text>h3 {
+        color: #DA5392;
+    }
+
+    .submit_button{
+        margin: 25px 0;
     }
 </style>
 {% endblock %}

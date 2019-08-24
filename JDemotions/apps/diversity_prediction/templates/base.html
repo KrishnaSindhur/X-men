@@ -32,7 +32,7 @@
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="navbar-brand">
                 <a class="nav-link" href="{% url 'home' %}"><img
-                        src="{% static 'logo.jpeg' %}" height="50px"></a>
+                        src="{% static 'logo.jpeg' %}" height="80px"></a>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -55,8 +55,8 @@
     {% block content %}
     {% endblock %}
     <hr>
-    <div>
-        <p>Developed by Nature Group</p>
+    <div style="text-align: center">
+        <p>Developed by Nature Group <img src="{% static 'heart.svg' %}" height="20px"></p>
     </div>
 </main>
 </body>

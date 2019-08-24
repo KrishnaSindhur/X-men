@@ -2,4 +2,4 @@ from django import forms
 
 
 class BiasForm(forms.Form):
-    text_input = forms.CharField(widget=forms.Textarea(attrs={'cols': 150, 'rows': 3}))
+    text_input = forms.CharField(widget=forms.Textarea(attrs={'cols': 150, 'rows': 3, 'placeholder': 'Paste Text Here...'}))
