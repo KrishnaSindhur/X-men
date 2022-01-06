@@ -1,5 +1,5 @@
 Django==2.2.3
-celery==4.3.0
+celery==5.2.2
 djangorestframework==3.10.1
 django-configurations==2.1
 psycopg2-binary==2.8.3
